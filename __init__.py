@@ -17,3 +17,12 @@ class DevIconsLinemodeFile(LinemodeBase):
 
   def filetitle(self, file, metadata):
     return devicon(file) + ' ' + file.relative_path
+
+@ranger.api.register_linemode
+class DevIconsLinemode(LinemodeBase):
+  name = "devicons_2spaces"
+
+  uses_metadata = False
+
+  def filetitle(self, file, metadata):
+    return devicon(file) + '  ' + file.relative_path
